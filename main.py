@@ -25,7 +25,10 @@ api_key = "50416027f5403b3198bd527dc00137bbcf08"
 search_term = input("논문 키워드 검색: ")
 
 # 검색 요청 생성
-search_url = f"{base_url}esearch.fcgi?db=pubmed&term={search_term}&api_key={api_key}"
+search_url = f"{base_url}esearch.fcgi?db=pubmed&term={search_term}&api_key={api_key}&retmax=25"
+'''
+retmax: default 20개/ # of retrieved UIDs
+'''
 response = requests.get(search_url)
 # data = response.json()
 print(response.text)
